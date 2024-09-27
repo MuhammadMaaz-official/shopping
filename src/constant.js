@@ -1,4 +1,4 @@
-export const BASE_URL = process.env.NODE_ENV === 'production' ? 'https://backend-lazzyshop.vercel.app' : 'https://backend-lazzyshop.vercel.app';
+export const BASE_URL = process.env.NODE_ENV === 'production' ? 'https://backend-shop-five.vercel.app' : 'https://backend-shop-five.vercel.app';
 export const PRODUCT_URL = '/api/products';
 export const USER_URL = '/api/users';
 export const ORDER_URL = '/api/orders';
