@@ -25,6 +25,7 @@ import { useGetMyOrdersQuery } from "../slices/orderApiSlice";
 import { Link } from "react-router-dom";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import Meta from "../components/Meta"; // Import Meta for SEO
+import { BASE_URL } from "../constant";
 
 function ProfilePage() {
   const [name, setName] = useState("");
@@ -45,7 +46,7 @@ function ProfilePage() {
       setName(userInfo.name);
       setEmail(userInfo.email);
       setProfilePicturePreview(
-        userInfo.profileImage ? `http://localhost:5000${userInfo.profileImage}` : "" // Load profile image from user info
+        userInfo.profileImage ? `${BASE_URL}${userInfo.profileImage}` : "" // Load profile image from user info
       );
     }
   }, [userInfo]);

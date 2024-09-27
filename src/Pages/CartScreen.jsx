@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'; // To allow navigation bac
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from '../slices/cartSlice'; // Import actions
 import Message from '../components/Message'; // Import the Message component
+import {BASE_URL} from '../constant'
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -90,7 +91,7 @@ const Cart = () => {
                 {/* Product Image and Details */}
                 <Box sx={{ display: "flex", alignItems: "center", flex: 1 }}>
                   <img
-                    src={`http://localhost:5000${item.image}`} // Ensure proper image URL path
+                    src={`${BASE_URL}${item.image}`} // Ensure proper image URL path
                     alt={item.name}
                     width="120px"
                     style={{ borderRadius: "8px" }}

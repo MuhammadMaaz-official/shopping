@@ -17,6 +17,7 @@ import {
   usePaidOrderMutation,
 } from '../slices/orderApiSlice';
 import { useSelector } from 'react-redux';
+import { BASE_URL } from '../constant';
 
 function OrderPage() {
   const { id: orderId } = useParams();
@@ -258,7 +259,7 @@ const ListItems = ({ orderItems }) => (
         <Grid item xs={3} sm={2}>
           <CardMedia
             component="img"
-            image={item.image.startsWith('http') ? item.image : `http://localhost:5000${item.image}`}
+            image={item.image.startsWith('http') ? item.image : `${BASE_URL}${item.image}`}
             alt={item.name}
             sx={{ borderRadius: '8px', width: '100%', boxShadow: 2 }}
           />

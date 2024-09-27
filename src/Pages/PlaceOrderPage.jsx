@@ -9,6 +9,7 @@ import Message from '../components/Message';
 import { useCreateOrderMutation } from '../slices/orderApiSlice';
 import { clearCartItems } from '../slices/cartSlice';
 import Meta from '../components/Meta';  // Import Meta for SEO
+import { BASE_URL } from '../constant';
 
 function PlaceOrderPage() {
     const navigate = useNavigate();
@@ -125,7 +126,7 @@ function PlaceOrderPage() {
                                                     <Grid item md={1}>
                                                         <CardMedia
                                                             component="img"
-                                                            image={item.image.startsWith('http') ? item.image : `http://localhost:5000${item.image}`}
+                                                            image={item.image.startsWith('http') ? item.image : `${BASE_URL}${item.image}`}
                                                             alt={item.name}
                                                             sx={{ width: '100%', height: 'auto' }}
                                                         />

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Carousel from "react-material-ui-carousel"; // You can use any carousel, including MUI-compatible ones
 import Loader from "./Loader";
 import Message from "./Message";
+import { BASE_URL } from "../constant";
 
 function ProductCarousel() {
   const { data: products, isLoading, error } = useGetTopProductsQuery();
@@ -37,7 +38,7 @@ function ProductCarousel() {
           <Link to={`/product/${product._id}`} style={{ textDecoration: "none" }}>
             <Box
               component="img"
-              src={product.image.startsWith('http') ? product.image : `http://localhost:5000${product.image}`} 
+              src={product.image.startsWith('http') ? product.image : `${BASE_URL}${product.image}`} 
               alt={product.name}
               sx={{
                 maxHeight: "80%", // Limit the image size to 80% of the carousel height

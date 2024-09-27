@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
+import { BASE_URL } from '../constant';
 
 function Product({ product }) {
   const calculateDiscountPercentage = (oldPrice, newPrice) => {
@@ -15,7 +16,7 @@ function Product({ product }) {
       <Link to={`/product/${product._id}`}>
         {/* Main product image */}
         <Card.Img
-  src={product.image.startsWith('http') ? product.image : `http://localhost:5000${product.image}`} 
+  src={product.image.startsWith('http') ? product.image : `${BASE_URL}${product.image}`} 
   variant="top"
           className="img-fluid product-image"
           style={{
